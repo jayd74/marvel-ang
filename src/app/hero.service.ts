@@ -23,6 +23,11 @@ export class HeroService {
     return this.http.get<Hero[]>(this.marvelUrl)
   }
 
+  getHero(id: number): Observable<Hero> {
+    const heroUrl = `http://gateway.marvel.com/v1/public/characters/${id}?ts=${this.ts}&apikey=${apiKey.public}&hash=${this.hash}`
+    return this.http.get<Hero>(heroUrl)
+  }
+
   constructor(
     private http: HttpClient
   ) { }

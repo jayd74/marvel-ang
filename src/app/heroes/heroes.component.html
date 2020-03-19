@@ -1,5 +1,9 @@
 <div *ngFor="let hero of fiveHeroes">
-  {{hero.name}}
-  id: {{hero.id}}
-  <div class='hero-image'><img src={{hero.thumbnail}}></div>
+  <a routerLink="/details/{{hero.id}}">
+    <div class="hero-link">
+      {{hero.name}}
+      id: {{hero.id}}
+      <div class='hero-image'><img src={{hero.thumbnail}}></div>
+    </div>
+  </a>
 </div>

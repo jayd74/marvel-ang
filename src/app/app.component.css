@@ -1,0 +1,7 @@
+nav {
+  display: flex;
+}
+
+nav a {
+  margin: 0 10px;
+}

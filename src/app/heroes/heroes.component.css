@@ -11,3 +11,11 @@
 img {
   width: 100%;
 }
+
+.hero-link {
+  padding: 10px;
+}
+
+.hero-link:hover {
+  background: lightblue;
+}
