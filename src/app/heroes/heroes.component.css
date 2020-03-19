@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  width: 250px;
+}
+
+img {
+  width: 100%;
+}
