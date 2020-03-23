@@ -3,7 +3,7 @@
 <ul>
   <li *ngFor="let result of results">
     <a routerLink="/details/{{result.id}}">
-      {{result.name}}
+      <div class='result'><img *ngIf="result.thumbnail !== 'undefined.undefined'" src={{result.thumbnail}}><span>{{result.name}}</span></div>
     </a>
   </li>
 </ul>

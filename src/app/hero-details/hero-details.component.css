@@ -1,11 +1,24 @@
+:host {
+  min-height: 100vh;
+  display: block;
+  background: rgb(200,30,54);
+  background: linear-gradient(180deg, rgba(200,30,54,1) 0%, rgba(0,0,0,1) 100%);
+  font-family: 'Permanent Marker', cursive;
+}
+
 .hero {
   display: flex;
   justify-content: space-around;
+  padding: 25px;
 }
 
 .hero-image {
   flex-shrink: 0;
   width: 250px;
+  background: white;
+  padding: 10px;
+  border: 5px solid black;
+  border-radius: 10px;
 }
 
 img {
@@ -13,10 +26,21 @@ img {
 }
 
 .details {
-  margin: 10px;
+  margin: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: white;
+  border: 5px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  flex-grow: 1;
+}
+
+.name {
+  font-size: 25px;
+  text-align: center;
 }
 
 .info-label {

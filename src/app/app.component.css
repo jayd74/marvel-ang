@@ -1,7 +1,24 @@
-nav {
+header {
+  background-color: #151515;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  margin: 0;
   display: flex;
 }
 
-nav a {
-  margin: 0 10px;
+h1 > span {
+  height: 50px;
+  display: block;
+  margin-right: 10px;
+}
+
+img {
+  height: 100%;
 }

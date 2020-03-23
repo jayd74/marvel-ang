@@ -1,8 +1,12 @@
 <div *ngIf='hero' class="hero">
-  <div class='hero-image'><img src={{hero.thumbnail}} alt={{hero.name}} /></div>
+  <div class='hero-image'>
+    <img src={{hero.thumbnail}} alt={{hero.name}} />
+    <p class="name">{{hero.name}}</p>
+  </div>
+
   <div class="details">
-    <p><span class="info-label">Name:</span> {{hero.name}}</p>
     <span class="info-label">Description:</span>
     <p>{{hero.description}}</p>
   </div>
+
 </div>
