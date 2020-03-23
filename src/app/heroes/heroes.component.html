@@ -1,9 +1,13 @@
-<div *ngFor="let hero of fiveHeroes">
-  <a routerLink="/details/{{hero.id}}">
-    <div class="hero-link">
-      {{hero.name}}
-      id: {{hero.id}}
-      <div class='hero-image'><img src={{hero.thumbnail}}></div>
-    </div>
-  </a>
+<app-hero-search></app-hero-search>
+
+<div class="hero-container">
+  <div *ngFor="let hero of fiveHeroes">
+    <a routerLink="/details/{{hero.id}}">
+      <div class="hero-link">
+        {{hero.name}}
+        id: {{hero.id}}
+        <div class='hero-image'><img src={{hero.thumbnail}}></div>
+      </div>
+    </a>
+  </div>
 </div>
