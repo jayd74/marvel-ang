@@ -39,7 +39,7 @@ export class HeroSearchComponent implements OnInit {
 
     this.heroes$.subscribe(response => {
       const hero = get(response, 'data.results[0]')
-      console.log(hero)
+
       this.results = [{
         name: get(hero, 'name'),
         id: get(hero, 'id'),
@@ -47,6 +47,5 @@ export class HeroSearchComponent implements OnInit {
         thumbnail: `${get(hero, 'thumbnail.path')}.${get(hero, 'thumbnail.extension')}`
       }]
     })
-    console.log(this.results)
   }
 }

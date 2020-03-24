@@ -11,28 +11,34 @@ import { sortBy } from 'lodash'
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  fiveHeroes: Hero[] = [];
   allHeroes: Hero[] = [];
   selectedHero: Hero
 
   constructor(private heroService: HeroService) { }
 
   getHeroes(): void {
-    this.heroService.getHeroes().subscribe(response => {
-      const results = response['data'].results
+    const heroParams = [
+      'iron man', 'captain america', 'spider-man',
+      'hulk', 'thor', 'wolverine',
+      'thanos', 'thing', 'ultron'
+    ]
 
-      results.forEach(result => {
-        const { name, thumbnail, id, description } = result
-        const { path, extension } = thumbnail
+    heroParams.forEach(hero => {
+      this.heroService.getHeroes(hero).subscribe(response => {
+        const results = response['data'].results
 
-        this.allHeroes.push({
-          name,
-          id,
-          description,
-          thumbnail: `${path}.${extension}`
+        results.forEach(result => {
+          const { name, thumbnail, id, description } = result
+          const { path, extension } = thumbnail
+
+          this.allHeroes.push({
+            name,
+            id,
+            description,
+            thumbnail: `${path}.${extension}`
+          })
         })
       })
-      this.fiveHeroes = this.allHeroes.slice(0, 5)
     })
   }
 

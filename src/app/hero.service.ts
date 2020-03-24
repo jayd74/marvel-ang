@@ -17,10 +17,10 @@ export class HeroService {
   ts = Date.now().toString()
   hash = Md5.hashStr(`${this.ts}${apiKey.private}${apiKey.public}`)
 
-  private marvelUrl = `http://gateway.marvel.com/v1/public/characters?ts=${this.ts}&apikey=${apiKey.public}&hash=${this.hash}`
+  getHeroes(param: string): Observable<Hero[]> {
+    const avengersUrl = `http://gateway.marvel.com/v1/public/characters?name=${param}&ts=${this.ts}&apikey=${apiKey.public}&hash=${this.hash}&limit=11`
 
-  getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.marvelUrl)
+    return this.http.get<Hero[]>(avengersUrl)
   }
 
   getHero(id: number): Observable<Hero> {
@@ -29,7 +29,7 @@ export class HeroService {
   }
 
   searchHeroes(term: string): Observable<Hero[]> {
-    const heroUrl = `http://gateway.marvel.com/v1/public/characters?name=${term}&ts=${this.ts}&apikey=${apiKey.public}&hash=${this.hash}`
+    const heroUrl = `http://gateway.marvel.com/v1/public/characters?nameStartsWith=${term}&ts=${this.ts}&apikey=${apiKey.public}&hash=${this.hash}`
 
     if (!term.trim()) {
       // if not search term, return empty hero array.
